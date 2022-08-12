@@ -24,8 +24,8 @@ onMount(async () => {
     })
   ).json();
   apiData.set(data);
-});
 
+});
   /*
   fetch(url, {
     headers: {
