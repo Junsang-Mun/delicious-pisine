@@ -1,16 +1,22 @@
 <script>
-import dotenv from "dotenv";
-import { onMount } from "svelte";
-import { writable } from "svelte/store";
-//import { apiData, drinkNames } from "./store.js";
-dotenv.config();
+  import dotenv from 'dotenv';
+  import { onMount } from 'svelte';
+  dotenv.config();
 
-const databaseId = process.env.DB_ID;
-const apiKey = process.env.API_KEY;
-const url = `https://api.notion.com/v1/databases/${databaseId}/query`;
-export const apiData = writable([]);
+  const databaseId = process.env.DB_ID;
+  const apiKey = process.env.API_KEY;
+  const url = `https://api.notion.com/v1/databases/${databaseId}/query`;
+  const uurl = `https://svelte.dev/tutorial/api/album`;
+  let database = [];
 
-onMount(async () => {
+  onMount(async () => {
+  		const res = await fetch(uurl);
+  		database = await res.json();
+  });
+</script>
+
+
+<!--
   const data = await(
     await fetch(url, {
       headers: {
@@ -25,9 +31,7 @@ onMount(async () => {
   ).json();
   apiData.set(data);
 
-});
-  /*
-  fetch(url, {
+    fetch(url, {
     headers: {
       "Authorization": `Bearer ${apiKey}`,
       "Content-Type": "application/json",
@@ -43,13 +47,12 @@ onMount(async () => {
     console.log(error);
     return [];
   });
-}); */
-</script>
+-->
 
 
 
 <div class="navbar bg-base-100 shadow-lg bg-base-200">
-  <a class="btn btn-ghost normal-case text-xl" href="http://localhost:5173">{apiData}</a>
+  <a class="btn btn-ghost normal-case text-xl" href="http://localhost:5173">dasdf</a>
 </div>
 <!--
 <div class="m-10">
