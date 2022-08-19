@@ -1,17 +1,59 @@
 <script>
     import { onMount } from 'svelte';
-    import { apiCall } from '../functions/apicall'
-    const restaurants = [];
-    let data;
+    import axios from 'axios';
+    const url = 'https://delicious-pisine-backend.herokuapp.com/api/restaurants';
+    let restaurantDatas = [];
 
+    function apiCall(u) {
+        axios.get(u)
+        .then(response => {
+            console.log(response.data.data);
+            restaurantDatas = response.data.data;
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    onMount(() => {
+        apiCall(url)
+    })
+    
+</script>
+
+<div>{restaurantDatas}</div>
+
+<div>
+    {#each restaurantDatas as rData}
+    <div>
+        {JSON.stringify(rData)}
+    </div>
+    {/each}
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    import { onMount } from 'svelte';
+    import { apiCall } from '../functions/apicall'
+    let restaurants = [];
 
     onMount(async () => {
-        data = apiCall();
-        restaurants = await data.json();
+        apiCall();
+        console.log('asdfasdf');
+        console.log('dd');
     });
 </script>
 
 <div>
-	<pre>{restaurants}</pre>
+    {#each restaurants as data}
+	<pre>{data.data.id}</pre>
+    {/each}
 </div>
-
+ -->

@@ -1,38 +1,24 @@
-// import { writable } from 'svelte/store'
-
-// export default function () {
-//     const url = 'https://delicious-pisine-backend.herokuapp.com/api/restaurants';
-// 	const loading = writable(false)
-// 	const error = writable(false)
-// 	const data = writable({})
-	
-// 	async function get() {
-// 		loading.set(true)
-// 		error.set(false)
-// 		try {
-// 			const response = await fetch(url)
-// 			data.set(response)
-// 		} catch(e) {
-// 			error.set(e)
-// 		}
-// 		loading.set(false)
-// 	}
-	
-// 	get()
-	
-// 	return [ data, loading, error, get]
-// }
+import axios from 'axios';
 
 export async function apiCall() {
 	const url = 'https://delicious-pisine-backend.herokuapp.com/api/restaurants';
 
-	await fetch(url)
-	.then(response => {
-		console.log(response);
-		return response;
-	})
-	.catch(error => {
-		console.log(error);
-		return error;
-	});
+	const response = axios.get(url)
+	.then(response => response.data)
+	.then(console.log(response));
 }
+
+// export async function apiCall() {
+// 	const url = 'https://delicious-pisine-backend.herokuapp.com/api/restaurants';
+
+// 	await fetch(url)
+// 	.then(response => response.json())
+// 	.then(result => {
+// 		console.log(result);
+// 		return result;
+// 	})
+// 	.catch(error => {
+// 		console.log(error);
+// 		return error;
+// 	});
+// }
