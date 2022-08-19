@@ -20,18 +20,22 @@
     
 </script>
 
-<div>{restaurantDatas}</div>
-
+<main>
+    <p></p>
 <div>
     {#each restaurantDatas as rData}
-    <div>
-        {JSON.stringify(rData.attributes.Name)}
-    </div>
+    <div class="card w-96 bg-base-100 shadow-xl m-10">
+        <div class="card-body">
+          <h2 class="card-title">{JSON.stringify(rData.attributes.Name).replace(/\"/g, '')}</h2>
+          <p>{@html JSON.stringify(rData.attributes.Menu).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
     {/each}
 </div>
-
-
-
+</main>
 
 
 
