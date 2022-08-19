@@ -25,7 +25,7 @@
 <div>
     {#each restaurantDatas as rData}
     <div>
-        {JSON.stringify(rData)}
+        {JSON.stringify(rData.attributes.Name)}
     </div>
     {/each}
 </div>
