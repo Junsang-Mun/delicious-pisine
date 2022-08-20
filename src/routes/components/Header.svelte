@@ -3,7 +3,7 @@
     import img1 from '../images/1.png';
 </script>
 
-<div class="navbar bg-base-100 shadow p-3">
+<div class="navbar bg-base-100 shadow mb-4">
     <div class="flex-1">
         <button class="btn btn-ghost normal-case text-xl" on:click="{() => apiCall()}">존맛탱 피씬</button>
     </div>

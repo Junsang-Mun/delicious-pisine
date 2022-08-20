@@ -14,7 +14,7 @@
     <div class="container mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
             {#each $restaurantDatas as rd}
-            <div class="card w-90 bg-base-100 shadow-xl m-10">
+            <div class="card w-90 bg-base-100 shadow m-5">
                 <div class="card-body">
                     <h1 class="card-title prose">{JSON.stringify(rd.attributes.Name).replace(/\"/g, '')}</h1>
                     <p>{@html JSON.stringify(rd.attributes.Summary).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
