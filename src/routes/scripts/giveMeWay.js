@@ -15,7 +15,7 @@ export function giveMeWay(lat, lng, provider, name) {
         if (isMobile === true) {
             url = `nmap://route/walk?slat=${s_lat}&slng=${s_lng}&sname=피씨너들의%20무덤&dlat=${lat}&dlng=${lng}&dname=${name}`;
         } else {
-            url = `https://map.naver.com/v5/directions/${s_lng},${s_lat},피씨너들의%20무덤,,PLACE_POI/${lng},${lat},${name},,PLACE_POI/-/walk`
+            url = `https://map.naver.com/v5/directions/${s_lng},${s_lat},피씨너들의%20무덤,,PLACE_POI/${lng},${lat},${name},,PLACE_POI/-/walk`;
             //url = `http://map.naver.com/index.nhn?slng=${s_lng}&slat=${s_lat}&stext=피씨너들의%20무덤&elng=${lng}&elat=${lat}&etext=${name}`;
         }
         console.log(url);
