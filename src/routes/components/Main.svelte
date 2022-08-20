@@ -44,8 +44,8 @@
                                 <h2 class="text-lg font-bold">영업시간 및 기타 정보</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Note).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                                 <!-- DB 상 Lng/Lat가 반대로 들어가서... Lng 받아서 Lat 인자에/ Lat 받아서 Lng 인자에 넣어줍니다. 추후 수정예정... 수정... 해야지.... -->
-                                <button class="btn btn-link bg-[#03c75a] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), 'N', JSON.stringify(rd.attributes.Name).replace(/\"/g, ''))}">네이버 지도 길찾기</button>
-                                <button class="btn btn-link	bg-[#fee500] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), 'K', '')}">카카오 지도 길찾기</button>
+                                <button class="btn btn-link bg-[#03c75a] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), 'N', JSON.stringify(rd.attributes.Name).replace(/\"/g, ''))}">네이버 지도 길찾기</button>
+                                <button class="btn btn-link	bg-[#fee500] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), 'K', '')}">카카오 지도 길찾기</button>
                             </label>
                         </label>
                     </div>
