@@ -1,9 +1,23 @@
 <script>
     import { onMount } from 'svelte';
-import { set_attributes } from 'svelte/internal';
     import { apiCall, apiCallFilter } from '../scripts/apiCall';
-    import { giveMeWay } from '../scripts/giveMeWay';
     import { restaurantDatas } from '../scripts/store';
+
+    function giveMeWay(lat, lng, provider, name) {
+        const s_lng = '127.0300294';
+        const s_lat = '37.4921415';
+
+        if (provider == 'N') {
+            //naver map
+            const url = `nmap://route/walk?slat=${s_lat}&slng=${s_lng}&sname=피씨너들의%20무덤&dlat=${lat}&dlng=${lng}&dname=${name}`;
+            console.log(url);
+            window.open(url);
+        } else if (provider == 'K') {
+            //kakao map
+            const url = `kakaomap://route?sp=${s_lat},${s_lng}&ep=${lat},${lng}&by=FOOT`;
+            window.open(url);
+        }
+    }
 
     onMount(() => {
         apiCall()
@@ -44,8 +58,8 @@ import { set_attributes } from 'svelte/internal';
                                 <h2 class="text-lg font-bold">영업시간 및 기타 정보</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Note).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                                 <!-- DB 상 Lng/Lat가 반대로 들어가서... Lng 받아서 Lat 인자에/ Lat 받아서 Lng 인자에 넣어줍니다. 추후 수정예정... 수정... 해야지.... -->
-                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, '')), 'N', JSON.stringify(rd.attributes.Name).replace(/\"/g, ''))}">네이버 지도 길찾기</button>
-                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, '')), 'K', '')}">카카오 지도 길찾기</button>
+                                <button class="btn btn-outline" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), 'N', JSON.stringify(rd.attributes.Name).replace(/\"/g, ''))}">네이버 지도 길찾기</button>
+                                <button class="btn btn-outline" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), 'K', '')}">카카오 지도 길찾기</button>
                             </label>
                         </label>
                     </div>
