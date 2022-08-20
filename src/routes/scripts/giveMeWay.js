@@ -3,8 +3,8 @@
 // DB상 저장이 잘못되어서 lat/lng 이슈는 Main.svelte에서만 확인하면 괜찮음
 
 export function giveMeWay(lat, lng, provider, name) {
-    const s_lng = '127.029776';
-    const s_lat = '37.4920509';
+    const s_lng = '127.0300294';
+    const s_lat = '37.4921415';
 
     if (provider === 'N') {
         //naver map
