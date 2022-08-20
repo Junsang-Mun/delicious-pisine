@@ -1,6 +1,8 @@
 <script>
     import { onMount } from 'svelte';
+import { set_attributes } from 'svelte/internal';
     import { apiCall, apiCallFilter } from '../scripts/apiCall';
+    import { giveMeWay } from '../scripts/giveMeWay';
     import { restaurantDatas } from '../scripts/store';
 
     onMount(() => {
@@ -16,7 +18,7 @@
             <div class="card w-96 bg-base-100 shadow-xl m-10">
                 <div class="card-body">
                     <h1 class="card-title prose">{JSON.stringify(rd.attributes.Name).replace(/\"/g, '')}</h1>
-                    <p>{@html JSON.stringify(rd.attributes.Location).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                    <p>{@html JSON.stringify(rd.attributes.Summary).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                     <br>
                     <div class="card-actions justify-end">
                         <button class="btn btn-outline" on:click={() => apiCallFilter('Kind', JSON.stringify(rd.attributes.Kind).replace(/\"/g, ''))}>{JSON.stringify(rd.attributes.Kind).replace(/\"/g, '')}</button>
@@ -41,6 +43,9 @@
                                 <br>
                                 <h2 class="text-lg font-bold">영업시간 및 기타 정보</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Note).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                                <!-- DB 상 Lng/Lat가 반대로 들어가서... Lng 받아서 Lat 인자에/ Lat 받아서 Lng 인자에 넣어줍니다. 추후 수정예정... 수정... 해야지.... -->
+                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng), JSON.stringify(rd.attributes.Lat)), '', 'N')}">네이버 지도 길찾기</button>
+                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng), JSON.stringify(rd.attributes.Lat)), JSON.stringify(rd.attributes.Name), 'K')}">카카오 지도 길찾기</button>
                             </label>
                         </label>
                     </div>
