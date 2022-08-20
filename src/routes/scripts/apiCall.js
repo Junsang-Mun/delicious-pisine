@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { restaurantDatas } from './store';
+
 const url = 'https://delicious-pisine-backend.herokuapp.com/api/restaurants';
 
 export function apiCall() {
@@ -14,6 +15,13 @@ export function apiCall() {
 }
 export function apiCallFilter(k, v){
     axios.get(`${url}?filters[${k}][$eq]=${v}`)
+    .then(response => {
+        console.log(response.data.data);
+        restaurantDatas.set(response.data.data);
+    })
+}
+export function apiCallId(id) {
+    axios.get(`${url}/${id}`)
     .then(response => {
         console.log(response.data.data);
         restaurantDatas.set(response.data.data);
