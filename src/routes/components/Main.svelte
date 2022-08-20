@@ -28,7 +28,14 @@
                         {:else}
                             <button class="btn btn-outline no-animmation">가격 정보 없음</button>
                         {/if}
-                        <button class="btn btn-primary">자세히 보기</button>
+                        <label for="rd-modal-{JSON.stringify(rd.id)}" class="btn btn-primary modal-button">자세히 보기</label>
+                        <input type="checkbox" id="rd-modal-{JSON.stringify(rd.id)}" class="modal-toggle" />
+                        <label for="rd-modal-{JSON.stringify(rd.id)}" class="modal cursor-pointer">
+                            <label class="modal-box relative" for="">
+                                <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
+                                <p class="py-4">{@html JSON.stringify(rd.attributes.Menu).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                            </label>
+                        </label>
                     </div>
                 </div>
             </div>
