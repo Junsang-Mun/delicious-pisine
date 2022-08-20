@@ -44,7 +44,7 @@
                                 <h2 class="text-lg font-bold">영업시간 및 기타 정보</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Note).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                                 <button class="btn btn-link bg-[#03c75a] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), 'N', JSON.stringify(rd.attributes.Name).replace(/\"/g, ''))}">네이버 지도 길찾기</button>
-                                <button class="btn btn-link	bg-[#fee500] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), 'K', '')}">카카오 지도 길찾기</button>
+                                <button class="btn btn-link	bg-[#fee500] text-black m-2" on:click="{() => giveMeWay(JSON.stringify(rd.attributes.Lat).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), 'K', JSON.stringify(rd.attributes.Name).replace(/\"/g, ''))}">카카오 지도 길찾기</button>
                             </label>
                         </label>
                     </div>
