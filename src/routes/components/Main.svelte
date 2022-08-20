@@ -13,9 +13,9 @@ import { set_attributes } from 'svelte/internal';
 <main>
 <div>
     <div class="container mx-auto">
-        <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 xl:grid-cols-3">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
             {#each $restaurantDatas as rd}
-            <div class="card w-96 bg-base-100 shadow-xl m-10">
+            <div class="card w-90 bg-base-100 shadow-xl m-10">
                 <div class="card-body">
                     <h1 class="card-title prose">{JSON.stringify(rd.attributes.Name).replace(/\"/g, '')}</h1>
                     <p>{@html JSON.stringify(rd.attributes.Summary).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
@@ -44,8 +44,8 @@ import { set_attributes } from 'svelte/internal';
                                 <h2 class="text-lg font-bold">영업시간 및 기타 정보</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Note).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                                 <!-- DB 상 Lng/Lat가 반대로 들어가서... Lng 받아서 Lat 인자에/ Lat 받아서 Lng 인자에 넣어줍니다. 추후 수정예정... 수정... 해야지.... -->
-                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng), JSON.stringify(rd.attributes.Lat)), '', 'N')}">네이버 지도 길찾기</button>
-                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng), JSON.stringify(rd.attributes.Lat)), JSON.stringify(rd.attributes.Name), 'K')}">카카오 지도 길찾기</button>
+                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, '')), '', 'N')}">네이버 지도 길찾기</button>
+                                <button class="btn btn-outline" on:click="{() => giveMeWay((JSON.stringify(rd.attributes.Lng).replace(/\"/g, ''), JSON.stringify(rd.attributes.Lat).replace(/\"/g, '')), JSON.stringify(rd.attributes.Name).replace(/\"/g, ''), 'K')}">카카오 지도 길찾기</button>
                             </label>
                         </label>
                     </div>
