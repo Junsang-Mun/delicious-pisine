@@ -1,7 +1,3 @@
-// lat/lng 관련 Note:
-// 신경쓸 필요 없음
-// DB상 저장이 잘못되어서 lat/lng 이슈는 Main.svelte에서만 확인하면 괜찮음
-
 export function giveMeWay(lat, lng, provider, name) {
     const s_lng = '127.0300294';
     const s_lat = '37.4921415';
