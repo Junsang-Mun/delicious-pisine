@@ -4,6 +4,6 @@
 </script>
 
 <Header />
-<div class="grid h-screen place-items-center">
+<div class="grid h-screen" style="place-items: start center;">
     <Main />
 </div>

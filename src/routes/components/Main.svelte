@@ -16,7 +16,8 @@
             <div class="card w-96 bg-base-100 shadow-xl m-10">
                 <div class="card-body">
                     <h1 class="card-title prose">{JSON.stringify(rd.attributes.Name).replace(/\"/g, '')}</h1>
-                    <p>{@html JSON.stringify(rd.attributes.Menu).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                    <p>{@html JSON.stringify(rd.attributes.Location).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                    <br>
                     <div class="card-actions justify-end">
                         <button class="btn btn-outline" on:click={() => apiCallFilter('Kind', JSON.stringify(rd.attributes.Kind).replace(/\"/g, ''))}>{JSON.stringify(rd.attributes.Kind).replace(/\"/g, '')}</button>
                         {#if JSON.stringify(rd.attributes.Price).replace(/\"/g, '') == 'High'}
@@ -32,8 +33,14 @@
                         <input type="checkbox" id="rd-modal-{JSON.stringify(rd.id)}" class="modal-toggle" />
                         <label for="rd-modal-{JSON.stringify(rd.id)}" class="modal cursor-pointer">
                             <label class="modal-box relative" for="">
-                                <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
+                                <h2 class="text-lg font-bold">메뉴</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Menu).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                                <br>
+                                <h2 class="text-lg font-bold">위치</h2>
+                                <p class="py-4">{@html JSON.stringify(rd.attributes.Location).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
+                                <br>
+                                <h2 class="text-lg font-bold">영업시간 및 기타 정보</h2>
+                                <p class="py-4">{@html JSON.stringify(rd.attributes.Note).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                             </label>
                         </label>
                     </div>

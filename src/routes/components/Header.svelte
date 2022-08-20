@@ -4,7 +4,7 @@
 
 <div class="navbar bg-base-100 shadow p-3">
     <div class="flex-1">
-        <button class="btn btn-ghost normal-case text-xl" on:click="{() => apiCall()}">daisyUI</button>
+        <button class="btn btn-ghost normal-case text-xl" on:click="{() => apiCall()}">존맛탱 피씬</button>
     </div>
     <div class="flex-none">
         <button class="btn btn-square btn-ghost">
