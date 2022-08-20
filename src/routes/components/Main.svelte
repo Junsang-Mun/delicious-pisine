@@ -34,6 +34,7 @@
                         <input type="checkbox" id="rd-modal-{JSON.stringify(rd.id)}" class="modal-toggle" />
                         <label for="rd-modal-{JSON.stringify(rd.id)}" class="modal cursor-pointer">
                             <label class="modal-box relative" for="">
+                                <label for="rd-modal-{JSON.stringify(rd.id)}" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                 <h2 class="text-lg font-bold">메뉴</h2>
                                 <p class="py-4">{@html JSON.stringify(rd.attributes.Menu).replace(/\\n/g, "<br />").replace(/\"/g, '')}</p>
                                 <br>
