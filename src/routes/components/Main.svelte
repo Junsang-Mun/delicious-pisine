@@ -26,16 +26,6 @@
 
 <main>
 	<div>
-		<button class="btn btn-outline" on:click|preventDefault={() => sortData('P_LTH')}>P_LTH</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => sortData('P_HTL')}>P_HTL</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => sortData('A_ATZ')}>A_ATZ</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => sortData('A_ZTA')}>A_ZTA</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => sortData('C_ATZ')}>C_ATZ</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => sortData('C_ZTA')}>C_ZTA</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => cookieAgreement(true)}>cookie agree</button>
-		<button class="btn btn-outline" on:click|preventDefault={() => cookieAgreement(false)}>cookie disagree</button>
-	</div>
-	<div>
 		<div class="container mx-auto">
 			<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
 				{#each $restaurantDatas as rd}
