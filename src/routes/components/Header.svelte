@@ -7,13 +7,15 @@
 <div class="navbar bg-base-100 shadow mb-4">
 	<div class="flex-1">
 		<button class="btn btn-ghost normal-case text-xl" on:click="{() => listData()}">존맛탱 피씬</button>
+		<input type="checkbox" class="toggle" checked />
 	</div>
 	<div class="flex-none">
 		<label for="modal-help" class="btn btn-square btn-ghost modal-button">
 			<svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><circle cx="128" cy="180" r="12"></circle><path d="M128,144v-8a28,28,0,1,0-28-28" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
 		</label>
 		<input type="checkbox" id="modal-help" class="modal-toggle" />
-		
+
+		<!-- 사용설명서 시작 -->
 		<label for="modal-help" class="modal cursor-pointer">
 			<label class="modal-box relative" for="">
 				<label for="modal-help" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
@@ -30,6 +32,6 @@
 				<p class="py-4">필터를 해제하고 싶으시면 상단의 <b>존맛탱 피씬</b>을 클릭해 주세요.</p>
 			</label>
 		</label>
-
+		<!-- 사용설명서 끝 -->
 	</div>
 </div>

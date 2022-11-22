@@ -8,7 +8,7 @@
 <div class="card w-95 bg-base-100 shadow m-5">
 	<div class="card-body">
 		<h1 class="card-title prose">{name}</h1>
-		<p>{@html summary}</p>
+		<p>{summary}</p>
 		<br>
 		<div class="card-actions justify-end">
 			<button class="btn btn-outline">{category}</button>
