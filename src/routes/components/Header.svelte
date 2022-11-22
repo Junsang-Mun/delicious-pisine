@@ -27,18 +27,18 @@
 		}
 	}
 	onMount(() => {
+		userAgreedForCookie = cookieAgreement();
 		const loc = getLocation();
-		if (loc == 'gaepo') {
+		if (loc === 'gaepo') {
 			locatoinFlag = '개포';
 			location('gaepo');
-		} else if (loc == 'seocho') {
+		} else if (loc === 'seocho') {
 			locatoinFlag = '서초'
 			location('seocho');
 		} else {
 			locatoinFlag = '개포'
 			location('gaepo');
 		}
-		userAgreedForCookie = cookieAgreement();
 	})
 </script>
 
