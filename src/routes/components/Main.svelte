@@ -6,7 +6,6 @@
 	let displayLocation;
 	showThisLocation.subscribe(loc => {
 		displayLocation = loc;
-		console.log(displayLocation);
 	})
 	onMount(() => {
 		listData();
