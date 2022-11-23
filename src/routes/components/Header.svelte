@@ -2,8 +2,6 @@
 	import { onMount } from 'svelte';
 	import { listData, sortData } from '../scripts/api';
 	import { getLocation, setLocation } from '../scripts/cookie';
-	import img1 from '../images/1.png';
-	import img2 from '../images/2.png';
 	let locatoinFlag = '';
 	function sort(opt) {
 		sortData(opt);
@@ -17,6 +15,7 @@
 			locatoinFlag = '서초';
 		} else {
 			setLocation('gaepo');
+			locatoinFlag = '개포';
 			console.error('Unsupported location');
 		}
 	}
