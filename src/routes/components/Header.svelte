@@ -1,43 +1,37 @@
 <script>
 	import { onMount } from 'svelte';
 	import { listData, sortData } from '../scripts/api';
-	import { getLocation, setLocation, cookieAgreement } from '../scripts/cookie';
+	import { getLocation, setLocation } from '../scripts/cookie';
 	import img1 from '../images/1.png';
 	import img2 from '../images/2.png';
 	let locatoinFlag = '';
-	let currentLocation = ''
-	let userAgreedForCookie = false;
 	function sort(opt) {
 		sortData(opt);
 	}
 	function location(opt) {
-		userAgreedForCookie = cookieAgreement();
 		if (opt === 'gaepo') {
-			if (userAgreedForCookie) {
-				setLocation('gaepo');
-			}
+			setLocation(opt);
 			locatoinFlag = '개포';
-			currentLocation = 'gaepo';
 		} else if (opt === 'seocho') {
-			if (userAgreedForCookie) {
-				setLocation('seocho');
-			}
+			setLocation(opt);
 			locatoinFlag = '서초';
-			currentLocation = 'seocho';
+		} else {
+			setLocation('gaepo');
+			console.error('Unsupported location');
 		}
 	}
 	onMount(() => {
-		userAgreedForCookie = cookieAgreement();
 		const loc = getLocation();
 		if (loc === 'gaepo') {
+			setLocation(loc);
 			locatoinFlag = '개포';
-			location('gaepo');
 		} else if (loc === 'seocho') {
-			locatoinFlag = '서초'
-			location('seocho');
+			setLocation(loc);
+			locatoinFlag = '서초';
 		} else {
-			locatoinFlag = '개포'
-			location('gaepo');
+			setLocation('gaepo');
+			locatoinFlag = '개포';
+			console.error('Unsupported location');
 		}
 	})
 </script>
