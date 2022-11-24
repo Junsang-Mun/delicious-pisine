@@ -5,8 +5,8 @@ const config = {
 	},
 	plugins: [require("daisyui")],
 	daisyui: {
-		themes: ["cmyk", "dracula", "halloween"],
-		darkTheme: "halloween",
+		themes: ["light", "dark"],
+		darkTheme: "dark",
 	}
 };
 
