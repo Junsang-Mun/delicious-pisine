@@ -4,6 +4,7 @@
 	import { getLocation, setLocation } from '../scripts/localStorage';
 	import logo from '../images/42delicious.png';
 	let locatoinFlag = '';
+	let buttonText = 'test';
 	function sort(opt) {
 		sortData(opt);
 	}
@@ -65,7 +66,7 @@
 					<li><a on:click={() => sort('C_ATZ')}>카테고리별로 묶기</a></li>
 				</ul>
 			</li>
-			<li><a>추천받기</a></li>
+			<li><a on:click={() => console.log('')}>추천받기</a></li>
 		</ul>
 	</div>
 </div>
