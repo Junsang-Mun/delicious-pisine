@@ -6,7 +6,7 @@ export function giveMeWay(lat, lng, provider, name) {
 	if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		isMobile = true;
 	} else {
-		isMobile  = false;
+		isMobile = false;
 	}
 
 	if (provider == 'N') {

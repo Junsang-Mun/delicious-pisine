@@ -6,7 +6,6 @@ const url = 'http://localhost:5961/api';
 export function listData() {
 	axios.get(`${url}/list`)
 	.then(r => {
-		console.error(r.data.list);
 		restaurantDatas.set(r.data.list);
 	})
 	.catch(e => {
@@ -19,7 +18,6 @@ export function sortData(method) {
 		'sort': method 
 	})
 	.then(r => {
-		console.warn(r.data.list);
 		restaurantDatas.set(r.data.list);
 	})
 	.catch(e => {
