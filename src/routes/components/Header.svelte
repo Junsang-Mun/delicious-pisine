@@ -4,7 +4,6 @@
 	import { getLocation, setLocation } from '../scripts/localStorage';
 	import logo from '../images/42delicious.png';
 	let locatoinFlag = '';
-	let buttonText = 'test';
 	function sort(opt) {
 		sortData(opt);
 	}
