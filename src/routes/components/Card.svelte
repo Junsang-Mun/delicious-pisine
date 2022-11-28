@@ -6,7 +6,7 @@
 	export let detail;
 </script>
 
-<label for="{name}{summary}" class="card w-95 bg-base-100 shadow m-5" style="cursor: pointer;">
+<label for="{name}{summary}" class="card w-96 bg-base-100 shadow m-5" style="cursor: pointer;">
 	<div class="card-body">
 		<h1 class="card-title prose">{name}</h1>
 		<p>{summary}</p>
