@@ -14,13 +14,13 @@
 		<div class="card-actions justify-end">
 			<button class="btn btn-outline">{category}</button>
 			{#if price == '가격 높음'}
-				<button class="btn btn-outline btn-error">{price}</button>
+				<button class="btn btn-error">{price}</button>
 			{:else if price == '가격 보통'}
-				<button class="btn btn-outline btn-warning">{price}</button>
+				<button class="btn btn-warning">{price}</button>
 			{:else if price == '가격 낮음'}
-				<button class="btn btn-outline btn-success">{price}</button>
+				<button class="btn btn-success">{price}</button>
 			{:else}
-				<button class="btn btn-outline no-animmation">가격 정보 없음</button>
+				<button class="btn no-animmation">가격 정보 없음</button>
 			{/if}
 		</div>
 	</div>
