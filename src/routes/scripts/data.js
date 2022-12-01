@@ -1,5 +1,14 @@
 import { writable } from 'svelte/store';
 
+export function initLocation() {
+	const loc = window.localStorage.getItem('location');
+	if (loc == 'seocho') {
+		setLocation('seocho');
+	} else {
+		setLocation('gaepo');
+	}
+}
+
 export function setLocation(location) {
 	if (location === 'gaepo') {
 		window.localStorage.setItem('location', 'gaepo');
@@ -15,5 +24,5 @@ export function setLocation(location) {
 }
 
 export const restaurantDatas = writable([]);
-export const currentLocation = writable('gaepo');
+export const currentLocation = writable('');
 export const currentView = writable('LIST');
