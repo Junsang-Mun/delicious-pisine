@@ -15,15 +15,15 @@
 		}
 	});
 
-	currentView.subscribe(v => {
-		if (v == 'MAP') {
-			viewText = '지도 보기';
-		} else if (v == 'LIST'){
-			viewText = '리스트 보기'
-		} else {
-			console.error(`ERR: @currentView.subscribe | val: ${v}`);
-		}
-	});
+	//currentView.subscribe(v => {
+	//	if (v == 'MAP') {
+	//		viewText = '지도 보기';
+	//	} else if (v == 'LIST'){
+	//		viewText = '리스트 보기'
+	//	} else {
+	//		console.error(`ERR: @currentView.subscribe | val: ${v}`);
+	//	}
+	//});
 
 	//function switchView() {
 	//	let view;
@@ -54,7 +54,7 @@
 					<li><p on:click={() => setLocation('seocho')}>서초 클러스터</p></li>
 				</ul>
 			</li>
-			{#if viewText == '리스트 보기'}
+			<!--{#if viewText == '리스트 보기'}-->
 			<li tabindex="0">
 				<p>
 					정렬 옵션
@@ -67,7 +67,7 @@
 					<li><p on:click={() => sortData('C_ATZ')}>카테고리별로 묶기</p></li>
 				</ul>
 			</li>
-			{/if}
+			<!--{/if}-->
 			<li><p on:click={() => getRandomData()}>추천받기</p></li>
 			<!--<li><p on:click={() => switchView()}>{viewText}</p></li>-->
 		</ul>
