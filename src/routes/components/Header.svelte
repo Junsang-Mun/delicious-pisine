@@ -1,8 +1,19 @@
 <script>
-	import { onMount } from 'svelte';
+	import { setLocation, currentLocation } from '../scripts/data';
 	import { sortData, getRandomData } from '../scripts/api';
 	import logo from '../images/42delicious.png';
 	let locatoinFlag = '';
+
+	currentLocation.subscribe(l => {
+		if (l == 'gaepo') {
+			locatoinFlag = '개포';
+		} else if (l == 'seocho') {
+			locatoinFlag = '서초';
+		} else {
+			console.error(`ERR: @Header | value: ${l}`);
+			locatoinFlag = '버그!버그!버그!버그!버그!버그!';
+		}
+	});
 </script>
 
 <div class="navbar bg-base-100">
@@ -17,8 +28,8 @@
 					<svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
 				</p>
 				<ul class="p-2 bg-base-100 z-50 border-2 border-base-300">
-					<li><p on:click={() => location('gaepo')}>개포 클러스터</p></li>
-					<li><p on:click={() => location('seocho')}>서초 클러스터</p></li>
+					<li><p on:click={() => setLocation('gaepo')}>개포 클러스터</p></li>
+					<li><p on:click={() => setLocation('seocho')}>서초 클러스터</p></li>
 				</ul>
 			</li>
 			<li tabindex="0">
