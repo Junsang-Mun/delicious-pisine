@@ -3,7 +3,7 @@
 	import { sortData, getRandomData } from '../scripts/api';
 	import logo from '../images/42delicious.png';
 	let locatoinFlag = '';
-	let viewText = '리스트 보기';
+	//let viewText = '리스트 보기';
 
 	currentLocation.subscribe(l => {
 		if (l == 'gaepo') {
@@ -25,17 +25,17 @@
 		}
 	});
 
-	function switchView() {
-		let view;
-		currentView.subscribe(v => {
-			view = v;
-		});
-		if (view == 'LIST') {
-			currentView.set('MAP');
-		} else if (view == 'MAP') {
-			currentView.set('LIST');
-		}
-	}
+	//function switchView() {
+	//	let view;
+	//	currentView.subscribe(v => {
+	//		view = v;
+	//	});
+	//	if (view == 'LIST') {
+	//		currentView.set('MAP');
+	//	} else if (view == 'MAP') {
+	//		currentView.set('LIST');
+	//	}
+	//}
 </script>
 
 <div class="navbar bg-base-100">
@@ -69,7 +69,7 @@
 			</li>
 			{/if}
 			<li><p on:click={() => getRandomData()}>추천받기</p></li>
-			<li><p on:click={() => switchView()}>{viewText}</p></li>
+			<!--<li><p on:click={() => switchView()}>{viewText}</p></li>-->
 		</ul>
 	</div>
 </div>
