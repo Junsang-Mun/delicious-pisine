@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { restaurantDatas } from './data';
 
-const url = 'http://localhost:5961/api';
+const url = 'https://api_42delicious.deta.dev/api';
 
 export function listData() {
 	axios.get(`${url}/list`)
